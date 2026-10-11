@@ -1,64 +1,190 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkillBridge - Tambah Lowongan</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 </head>
+
 <body>
 
-    <header>
-        <h1>SkillBridge</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="dashboard.html">
+                SkillBridge
+            </a>
 
-        <nav>
-            <a href="index.html">Lowongan</a>
-            <a href="tambah.html">Tambah Lowongan</a>
-        </nav>
-    </header>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <main>
-        <article>
-            <h2>Tambah Lowongan</h2>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">
+                            Dashboard
+                        </a>
+                    </li>
 
-            <form>
-                <label for="posisi">Posisi:</label>
-                <input type="text" id="posisi" name="posisi">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            Daftar Lowongan
+                        </a>
+                    </li>
 
-                <br><br>
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                           aria-current="page"
+                           href="tambah.html">
+                            Tambah Lowongan
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-                <label for="perusahaan">Perusahaan:</label>
-                <input type="text" id="perusahaan" name="perusahaan">
+    
+    <main class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-7">
 
-                <br><br>
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
 
-                <label for="lokasi">Lokasi:</label>
-                <input type="text" id="lokasi" name="lokasi">
+                        <h1 class="h3 mb-2">Tambah Lowongan</h1>
 
-                <br><br>
+                        <p class="text-secondary mb-4">
+                            Lengkapi informasi untuk menambahkan lowongan pekerjaan.
+                        </p>
 
-                <label for="tipe">Tipe Pekerjaan:</label>
-                <select id="tipe" name="tipe">
-                    <option value="fulltime">Full Time</option>
-                    <option value="parttime">Part Time</option>
-                    <option value="internship">Internship</option>
-                </select>
+                        <form>
+                            
+                            <div class="mb-3">
+                                <label for="posisi" class="form-label">
+                                    Posisi Pekerjaan
+                                </label>
 
-                <br><br>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="posisi"
+                                    name="posisi"
+                                    placeholder="Contoh: Backend Developer"
+                                    required>
+                            </div>
 
-                <label for="deskripsi">Deskripsi:</label>
-                <br>
-                <textarea id="deskripsi" name="deskripsi" rows="5" cols="30"></textarea>
+                            
+                            <div class="mb-3">
+                                <label for="perusahaan" class="form-label">
+                                    Nama Perusahaan
+                                </label>
 
-                <br><br>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="perusahaan"
+                                    name="perusahaan"
+                                    placeholder="Masukkan nama perusahaan"
+                                    required>
+                            </div>
 
-                <button type="submit">Simpan</button>
-            </form>
-        </article>
+                            
+                            <div class="mb-3">
+                                <label for="lokasi" class="form-label">
+                                    Lokasi
+                                </label>
+
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="lokasi"
+                                    name="lokasi"
+                                    placeholder="Contoh: Bandung"
+                                    required>
+                            </div>
+
+                            
+                            <div class="mb-3">
+                                <label for="tipe" class="form-label">
+                                    Tipe Pekerjaan
+                                </label>
+
+                                <select
+                                    class="form-select"
+                                    id="tipe"
+                                    name="tipe"
+                                    required>
+
+                                    <option value="" selected disabled>
+                                        Pilih tipe pekerjaan
+                                    </option>
+
+                                    <option value="fulltime">Full Time</option>
+                                    <option value="parttime">Part Time</option>
+                                    <option value="internship">Internship</option>
+                                </select>
+                            </div>
+
+                            
+                            <div class="mb-4">
+                                <label for="deskripsi" class="form-label">
+                                    Deskripsi Pekerjaan
+                                </label>
+
+                                <textarea
+                                    class="form-control"
+                                    id="deskripsi"
+                                    name="deskripsi"
+                                    rows="5"
+                                    placeholder="Jelaskan tanggung jawab dan kualifikasi pekerjaan..."
+                                    required></textarea>
+                            </div>
+
+                            
+                            <div class="d-flex gap-2">
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary">
+                                    Simpan Lowongan
+                                </button>
+
+                                <a
+                                    href="index.html"
+                                    class="btn btn-outline-secondary">
+                                    Batal
+                                </a>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 SkillBridge</p>
+    <footer class="bg-light text-center py-3 mt-4">
+        <p class="mb-0">&copy; 2026 SkillBridge</p>
     </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
+
